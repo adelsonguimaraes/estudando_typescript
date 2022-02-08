@@ -49,6 +49,13 @@ let alfabeto:string[] = ['A','B','C','D']
 
 Como vimos acima, todos os itens do nosso array devem obedecer a tipagem definida, qualquer valor que não obedeça essa tipagem irá gerar um erro.
 
+## Utilizando o tipo Any
+Como vimos lá na área de tipos, temos um tipo chamado any que basicamente assume qualquer tipo, então quando utilizamos esse tipo, não precisamos nos preocupar em que tipo de valor estamos atribuindo a determinada variável pois ele irá permitir qualquer tipo de valor.
+
+Mas quando devemos utilizar o tipo ``any``? Bem, o tipo ``any`` é uma forma de você poder permitir adicionar qualquer valor a uma variável tipada, ou seja, mesmo seguindo o valor do ``ts`` que são variáveis tipadas, você pode ter uma variável que aceita qualquer valor.
+
+No entanto, é importante impor o esforço de tipar as variáveis de forma correta a sua necessidade, o máximo possível, ainda assim, em alguns casos, acontecerá que não teremos como definir o valor exato que irá ser atribuído a uma variável, nesses casos extremos, podemos utilizar o tipo ``any`` para resolver.
+
 
 ## Comandos do transpilador TSC
 Para transpilar um arquivo do tipo ``TS`` utilizamos os comandos do transpilador ``TSC``, abaixo vamos ver os principais comandos.
