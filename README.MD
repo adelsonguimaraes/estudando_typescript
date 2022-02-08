@@ -85,8 +85,28 @@ Diferente do tipo ``any`` que vimos anteriormente que aceita qualquer valor e qu
 ```javascript
 let dados:string|number
 ```
-
 De forma simples, para definir mais um tipo aceito pela mesma variável, basta adicionar após o primeiro tipo um sinal de pipe seguido do segundo tipo ``|number``, a partir de então a variável aceitará valores dois dois tipos, porém, continuará gerando erro em dados de tipos diferentes dos definidos.
+
+## 😉 Tipando objetos
+Para tipar objetos não há segredos, tudo segue a mesma linha de reaciocínio que traçamos até agora, a grande diferença é que temos duas formas de tipar um objeto a primeira delas é criando um tipo personalizado, vamos ver um modelo.
+```javascript
+type User = {
+    nome: string,
+    idade: number,
+    telefone: string|number
+}
+```
+
+No modelo acima criamos um tipo personalizado onde nosso tipo ``User`` tem os atributos com sua tipagem definida, o a outra forma e a mais usada para definir a tipagem de um objeto é por ``Interfaces``, vejamos um modelo.
+```javascript
+interface User = {
+    nome: string,
+    idade: number,
+    telefone: string|number
+}
+```
+
+É idêntico ao ``type``, mudando apenas a definição para ``interface``.
 
 ## 🤯 Tipagem inteligente
 O ``TypeScript`` possui inteligência o suficiente para saber qual tipo deve definir para uma variável de acordo com sua inicialização, mesmo que não seja sinalizado o tipo da variável.
