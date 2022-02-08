@@ -21,6 +21,23 @@ Aqui vamos ver os principais tipos de variáveis que podemos utilizar no desenvo
 * ``boolean``: Utilizado para valores de verdadeiro e falso
 * ``array``: Utilizado para receber arrays como valor
 
+## Atribuindo tipagem
+Vamos entender agora como podemos definir um tipo de uma variável.
+
+Para defiinir um tipo de variável é bem simples, inicialmente a variável deve ser criada de forma natural como já é feito em ``JS``
+```javascript
+let variavel
+```
+
+Em seguida vamos definir seu tipo, para isso de forma muito simples precisamos apenas colocar ``:tipo``, vejamos a baixo como funciona
+```javascript
+let variavel:string
+```
+
+Podemos também atribuir o valor que vai inicializar a variável caso seja necessário, o que podemos também fazer de forma muito simples
+```javascript
+let variavel:string = 'iniciando'
+```
 
 ## Comandos do transpilador TSC
 Para transpilar um arquivo do tipo ``TS`` utilizamos os comandos do transpilador ``TSC``, abaixo vamos ver os principais comandos.
