@@ -58,10 +58,10 @@ Bem, o tipo ``any`` é uma forma de você poder permitir adicionar qualquer valo
 
 No entanto, é importante impor o esforço de tipar as variáveis de forma correta a sua necessidade, o máximo possível, ainda assim, em alguns casos, acontecerá que não teremos como definir o valor exato que irá ser atribuído a uma variável, nesses casos extremos, podemos utilizar o tipo ``any`` para resolver.
 
-## Tipando parametros de funções
-Quando trabalhamos com funções também podemos tipar os parámetros que iremos receber nessa função, para que os valores sejam atribuídos corretamente e nossas funcionalidades dentro do escopo da função funcione corretamente.
+## Tipando parâmetros de funções
+Quando trabalhamos com funções também podemos tipar os parâmetros que iremos receber nessa função, para que os valores sejam atribuídos corretamente e nossas funcionalidades dentro do escopo da função funcione corretamente.
 
-Novamente para atribuirmos um tipo a um parámetro de uma variável é muito simples, praticamente identico ao que já vimos anterior mente, mudando apenas que agora adicionaremos o tipo após cada parámetro da função, vejamos abaixo um exemplo.
+Novamente para atribuirmos um tipo a um parâmetro de uma variável é muito simples, praticamente identico ao que já vimos anterior mente, mudando apenas que agora adicionaremos o tipo após cada parâmetro da função, vejamos abaixo um exemplo.
 
 ```javascript
 function concatenar(nome: string, idade: number) {
