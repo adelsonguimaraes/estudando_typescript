@@ -52,10 +52,22 @@ Como vimos acima, todos os itens do nosso array devem obedecer a tipagem definid
 ## Utilizando o tipo Any
 Como vimos lá na área de tipos, temos um tipo chamado any que basicamente assume qualquer tipo, então quando utilizamos esse tipo, não precisamos nos preocupar em que tipo de valor estamos atribuindo a determinada variável pois ele irá permitir qualquer tipo de valor.
 
-Mas quando devemos utilizar o tipo ``any``? Bem, o tipo ``any`` é uma forma de você poder permitir adicionar qualquer valor a uma variável tipada, ou seja, mesmo seguindo o valor do ``ts`` que são variáveis tipadas, você pode ter uma variável que aceita qualquer valor.
+Mas quando devemos utilizar o tipo ``any``? 
+
+Bem, o tipo ``any`` é uma forma de você poder permitir adicionar qualquer valor a uma variável tipada, ou seja, mesmo seguindo o padrão do ``ts`` que são variáveis tipadas, você pode ter uma variável que aceita qualquer valor.
 
 No entanto, é importante impor o esforço de tipar as variáveis de forma correta a sua necessidade, o máximo possível, ainda assim, em alguns casos, acontecerá que não teremos como definir o valor exato que irá ser atribuído a uma variável, nesses casos extremos, podemos utilizar o tipo ``any`` para resolver.
 
+## Tipando parametros de funções
+Quando trabalhamos com funções também podemos tipar os parámetros que iremos receber nessa função, para que os valores sejam atribuídos corretamente e nossas funcionalidades dentro do escopo da função funcione corretamente.
+
+Novamente para atribuirmos um tipo a um parámetro de uma variável é muito simples, praticamente identico ao que já vimos anterior mente, mudando apenas que agora adicionaremos o tipo após cada parámetro da função, vejamos abaixo um exemplo.
+
+```javascript
+function concatenar(nome: string, idade: number) {
+    return 'Nome: ' + nome + 'idade:' + idade
+}
+```
 
 ## Comandos do transpilador TSC
 Para transpilar um arquivo do tipo ``TS`` utilizamos os comandos do transpilador ``TSC``, abaixo vamos ver os principais comandos.
