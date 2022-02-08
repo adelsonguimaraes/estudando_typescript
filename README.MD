@@ -69,6 +69,21 @@ function concatenar(nome: string, idade: number) {
 }
 ```
 
+## Tipagem inteligente
+O ``TypeScript`` possui inteligência o suficiente para saber qual tipo deve definir para uma variável de acordo com sua inicialização, mesmo que não seja sinalizado o tipo da variável.
+
+Então com isso podemos entender que mesmo que não chegue-mos a definir um tipo pra uma determinada variável, o type script irá analisar nossas atribuições a está variável e automaticamente irá definir um tipo pra ela de forma intríseca, vamos ver um exemplo abaixo pra entender melhor.
+
+```javascript
+let numeros = ['dez', 'vinte', 30, 40]
+```
+
+Veja que no exemplo acima não definimos um tipo para a nossa variável ``numeros``, que recebe um array de valores que variam entre números e texto, baseado nessa atribuição de valores o ``TS`` será capaz de saber qual tipo ele deve definir pra nossa variável.
+
+Analisando esse cenário podemos afirmar que nossa variável ``numeros`` aceita apenas array com valores tipados ``string`` ou ``number``.
+
+Isso é muito legal, porém também pode se tornar um problema, por isso o recomendado é sempre definir qual o tipo é desejado em cada variável.
+
 ## Comandos do transpilador TSC
 Para transpilar um arquivo do tipo ``TS`` utilizamos os comandos do transpilador ``TSC``, abaixo vamos ver os principais comandos.
 
