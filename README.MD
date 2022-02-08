@@ -87,7 +87,7 @@ let dados:string|number
 ```
 De forma simples, para definir mais um tipo aceito pela mesma variável, basta adicionar após o primeiro tipo um sinal de pipe seguido do segundo tipo ``|number``, a partir de então a variável aceitará valores dois dois tipos, porém, continuará gerando erro em dados de tipos diferentes dos definidos.
 
-## 😉 Tipando objetos
+## 😉 Tipando objetos - Type e Interface
 Para tipar objetos não há segredos, tudo segue a mesma linha de reaciocínio que traçamos até agora, a grande diferença é que temos duas formas de tipar um objeto a primeira delas é criando um tipo personalizado, vamos ver um modelo.
 ```javascript
 type User = {
@@ -123,6 +123,16 @@ Analisando esse cenário podemos afirmar que nossa variável ``numeros`` aceita 
 
 Isso é muito legal, porém também pode se tornar um problema, por isso o recomendado é sempre definir qual o tipo é desejado em cada variável.
 
+## 🤓 Especificando tipos - Type Assertions
+Em alguns casos com o contexto inteligente do ``TS`` ocorrerá de ele assumir um tipo para um determinado objeto, porém que não conterá o atributo desejado a ser consultado.
+
+Nesses casos precisamos informar ao ``TS`` o tipo exato que está manipulando para ele não gerar um erro, um exemplo disso é quando utilizamos o ``document.getElementById``, nesse caso ele intrinsecamente assumirá que o tipo será ``HTMLElement``, porém esse tipo não possui todos os atributos ou atributos específicos por exemplo o campo ``value``, isso porque este tipo pode ser qualquer elemento, por exemplo uma div.
+
+Diante disso é necessário iformar o tipo correto para a sua definição e assim poder acessar os campos certos, ness exemplo temos que usar o tipo ``HTMLInputElement``, para fazer isso demos após o fim da função adicionar ``as Tipo``, vejamos como fica.
+```javascript
+let nome = getElementById('nome') as HTMLInputElement
+```
+ 
 ## 🤭 Comandos do transpilador TSC
 Para transpilar um arquivo do tipo ``TS`` utilizamos os comandos do transpilador ``TSC``, abaixo vamos ver os principais comandos.
 

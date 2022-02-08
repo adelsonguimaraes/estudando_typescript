@@ -1,5 +1,1 @@
-type obj = {
-    nome: string,
-    idade: number,
-    telefone: string|number
-}
+let x = document.getElementById('nome') as HTMLInputElement
