@@ -69,6 +69,15 @@ function concatenar(nome: string, idade: number) {
 }
 ```
 
+## 🤫 Tipando retorno de funções
+De forma simples também podemos definir o tipo do retorno que uma determinada função deve ter, para isso apenas precisamos adicionar após o fechamento dos parênteses da função dois pontos seguidos do nosso tipo ``:tipo`` exatamente igual como definimos os tipos de variáveis, vejamos abaixo um modelo.
+```javascript
+function soma(n1:number, n2:number):boolean {
+    return (n1+n2>0)
+}
+```
+
+
 ## 🤤 Tipagem Múltipla
 Podemos também definir para uma determinada variável ``multi-tipagem``, ou seja, definir que a mesma variável aceita mais de um tipo de tipagem.
 
