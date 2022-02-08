@@ -1,1 +1,1 @@
-let x = document.getElementById('nome') as HTMLInputElement
+let a: 'INICIADO' | 'ANDAMENTO' | 'FINALIZADO'

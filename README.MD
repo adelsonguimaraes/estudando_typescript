@@ -132,7 +132,17 @@ Diante disso é necessário iformar o tipo correto para a sua definição e assi
 ```javascript
 let nome = getElementById('nome') as HTMLInputElement
 ```
- 
+
+## 😵‍💫 Especificando Tipos Literais
+Dentro do contexto do ``TS`` também podemos especificar tipos exatos, os chamados literais, eles funcionam parecidos com um modelo ``enum``, e tratam o valor atribuído e não mais o tipo desse valor.
+
+Com isso podemos por exemplo limitar uma variável a receber apenas determinados tipos de valores, o que pode ser muito últil quando estamos desenvolvendo, vamos ver um exemplo.
+```javascript
+let status: 'INICIADO' | 'ANDAMENTO' | 'FINALIZADO'
+```
+
+Acima temos um modelo de tipo literal, onde deixamos explícito de forma literal qual os valores que determinada variável deve aceitar, qualquer outro valor irá gerar um erro.
+
 ## 🤭 Comandos do transpilador TSC
 Para transpilar um arquivo do tipo ``TS`` utilizamos os comandos do transpilador ``TSC``, abaixo vamos ver os principais comandos.
 
