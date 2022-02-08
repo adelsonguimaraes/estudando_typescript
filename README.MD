@@ -39,6 +39,17 @@ Podemos também atribuir o valor que vai inicializar a variável caso seja neces
 let variavel:string = 'iniciando'
 ```
 
+## Criando um array tipado
+Vamos ver agora como criar um array com tipagem o que pode ser muito últil em determinados casos.
+
+Para criarmos um array tipado baseado no que já vimos anteriormente basta adicionar ao lado do nosso tipo sinais de colchetes ``:tipo[]``, com isso todos os valores deveram obedecer a nossa tipagem, vamos ver um exemplo.
+```javascript
+let alfabeto:string[] = ['A','B','C','D']
+```
+
+Como vimos acima, todos os itens do nosso array devem obedecer a tipagem definida, qualquer valor que não obedeça essa tipagem irá gerar um erro.
+
+
 ## Comandos do transpilador TSC
 Para transpilar um arquivo do tipo ``TS`` utilizamos os comandos do transpilador ``TSC``, abaixo vamos ver os principais comandos.
 

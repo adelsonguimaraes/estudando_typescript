@@ -1,2 +1,2 @@
 let nome: string = 'Adelson'
-let idade: number = 32
+let idade: Array<boolean> = []
