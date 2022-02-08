@@ -143,7 +143,7 @@ let status: 'INICIADO' | 'ANDAMENTO' | 'FINALIZADO'
 
 Acima temos um modelo de tipo literal, onde deixamos explícito de forma literal qual os valores que determinada variável deve aceitar, qualquer outro valor irá gerar um erro.
 
-## Tipando Funções
+## 🤪 Tipando Funções
 Já vimos como tipar os parâmetros de funções e como tipar o retorno das funções, agora vamos ver como tipar funções como um todo, utilizando o ``type``, vejamos a baixo um modelo.
 ```typescript
 type soma = (n1:number, n2: number) => number
