@@ -1,1 +1,1 @@
-let a: 'INICIADO' | 'ANDAMENTO' | 'FINALIZADO'
+type Soma = (n1:number, n2:number) => number

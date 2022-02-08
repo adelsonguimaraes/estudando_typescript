@@ -25,17 +25,17 @@ Aqui vamos ver os principais tipos de variáveis que podemos utilizar no desenvo
 Vamos entender agora como podemos definir um tipo de uma variável.
 
 Para defiinir um tipo de variável é bem simples, inicialmente a variável deve ser criada de forma natural como já é feito em ``JS``
-```javascript
+```typescript
 let variavel
 ```
 
 Em seguida vamos definir seu tipo, para isso de forma muito simples precisamos apenas colocar ``:tipo``, vejamos a baixo como funciona
-```javascript
+```typescript
 let variavel:string
 ```
 
 Podemos também atribuir o valor que vai inicializar a variável caso seja necessário, o que podemos também fazer de forma muito simples
-```javascript
+```typescript
 let variavel:string = 'iniciando'
 ```
 
@@ -43,7 +43,7 @@ let variavel:string = 'iniciando'
 Vamos ver agora como criar um array com tipagem o que pode ser muito últil em determinados casos.
 
 Para criarmos um array tipado baseado no que já vimos anteriormente basta adicionar ao lado do nosso tipo sinais de colchetes ``:tipo[]``, com isso todos os valores deveram obedecer a nossa tipagem, vamos ver um exemplo.
-```javascript
+```typescript
 let alfabeto:string[] = ['A','B','C','D']
 ```
 
@@ -63,7 +63,7 @@ Quando trabalhamos com funções também podemos tipar os parâmetros que iremos
 
 Novamente para atribuirmos um tipo a um parâmetro de uma variável é muito simples, praticamente identico ao que já vimos anterior mente, mudando apenas que agora adicionaremos o tipo após cada parâmetro da função, vejamos abaixo um exemplo.
 
-```javascript
+```typescript
 function concatenar(nome: string, idade: number) {
     return 'Nome: ' + nome + 'idade:' + idade
 }
@@ -71,7 +71,7 @@ function concatenar(nome: string, idade: number) {
 
 ## 🤫 Tipando retorno de funções
 De forma simples também podemos definir o tipo do retorno que uma determinada função deve ter, para isso apenas precisamos adicionar após o fechamento dos parênteses da função dois pontos seguidos do nosso tipo ``:tipo`` exatamente igual como definimos os tipos de variáveis, vejamos abaixo um modelo.
-```javascript
+```typescript
 function soma(n1:number, n2:number):boolean {
     return (n1+n2>0)
 }
@@ -82,14 +82,14 @@ function soma(n1:number, n2:number):boolean {
 Podemos também definir para uma determinada variável ``multi-tipagem``, ou seja, definir que a mesma variável aceita mais de um tipo de tipagem.
 
 Diferente do tipo ``any`` que vimos anteriormente que aceita qualquer valor e que deve ser usado em casos onde não se sabe o tipo do dado que será atribuído, aqui, sabe-se bem o tipo ou os tipos de dados que será atribuídos a variável, e assim temos como atender a necessidade de uma variável aceitar mais de um tipo, vejamos como isso fica no modelo a baixo.
-```javascript
+```typescript
 let dados:string|number
 ```
 De forma simples, para definir mais um tipo aceito pela mesma variável, basta adicionar após o primeiro tipo um sinal de pipe seguido do segundo tipo ``|number``, a partir de então a variável aceitará valores dois dois tipos, porém, continuará gerando erro em dados de tipos diferentes dos definidos.
 
 ## 😉 Tipando objetos - Type e Interface
 Para tipar objetos não há segredos, tudo segue a mesma linha de reaciocínio que traçamos até agora, a grande diferença é que temos duas formas de tipar um objeto a primeira delas é criando um tipo personalizado, vamos ver um modelo.
-```javascript
+```typescript
 type User = {
     nome: string,
     idade: number,
@@ -98,7 +98,7 @@ type User = {
 ```
 
 No modelo acima criamos um tipo personalizado onde nosso tipo ``User`` tem os atributos com sua tipagem definida, o a outra forma e a mais usada para definir a tipagem de um objeto é por ``Interfaces``, vejamos um modelo.
-```javascript
+```typescript
 interface User = {
     nome: string,
     idade: number,
@@ -113,7 +113,7 @@ O ``TypeScript`` possui inteligência o suficiente para saber qual tipo deve def
 
 Então com isso podemos entender que mesmo que não chegue-mos a definir um tipo pra uma determinada variável, o type script irá analisar nossas atribuições a está variável e automaticamente irá definir um tipo pra ela de forma intríseca, vamos ver um exemplo abaixo pra entender melhor.
 
-```javascript
+```typescript
 let numeros = ['dez', 'vinte', 30, 40]
 ```
 
@@ -129,7 +129,7 @@ Em alguns casos com o contexto inteligente do ``TS`` ocorrerá de ele assumir um
 Nesses casos precisamos informar ao ``TS`` o tipo exato que está manipulando para ele não gerar um erro, um exemplo disso é quando utilizamos o ``document.getElementById``, nesse caso ele intrinsecamente assumirá que o tipo será ``HTMLElement``, porém esse tipo não possui todos os atributos ou atributos específicos por exemplo o campo ``value``, isso porque este tipo pode ser qualquer elemento, por exemplo uma div.
 
 Diante disso é necessário iformar o tipo correto para a sua definição e assim poder acessar os campos certos, ness exemplo temos que usar o tipo ``HTMLInputElement``, para fazer isso demos após o fim da função adicionar ``as Tipo``, vejamos como fica.
-```javascript
+```typescript
 let nome = getElementById('nome') as HTMLInputElement
 ```
 
@@ -137,11 +137,19 @@ let nome = getElementById('nome') as HTMLInputElement
 Dentro do contexto do ``TS`` também podemos especificar tipos exatos, os chamados literais, eles funcionam parecidos com um modelo ``enum``, e tratam o valor atribuído e não mais o tipo desse valor.
 
 Com isso podemos por exemplo limitar uma variável a receber apenas determinados tipos de valores, o que pode ser muito últil quando estamos desenvolvendo, vamos ver um exemplo.
-```javascript
+```typescript
 let status: 'INICIADO' | 'ANDAMENTO' | 'FINALIZADO'
 ```
 
 Acima temos um modelo de tipo literal, onde deixamos explícito de forma literal qual os valores que determinada variável deve aceitar, qualquer outro valor irá gerar um erro.
+
+## Tipando Funções
+Já vimos como tipar os parâmetros de funções e como tipar o retorno das funções, agora vamos ver como tipar funções como um todo, utilizando o ``type``, vejamos a baixo um modelo.
+```typescript
+type soma = (n1:number, n2: number) => number
+```
+
+No modelo acima criamos uma tipagem de função chamada ``soma`` utilizando o ``type``, com isso nossa função que utilizar esse tipo deverá ter 2 parâmertros numéricos e uma saída também numérica.
 
 ## 🤭 Comandos do transpilador TSC
 Para transpilar um arquivo do tipo ``TS`` utilizamos os comandos do transpilador ``TSC``, abaixo vamos ver os principais comandos.
