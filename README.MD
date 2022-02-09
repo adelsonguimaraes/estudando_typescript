@@ -1,10 +1,11 @@
 # Estudando TypeScript 😶‍🌫️
 Neste projeto inicio o estudo mais focado de TypeScript, onde acompanho o curso da b7web e outros materiais como ferramenta base de conhecimento.
 
-
+#
 ## 💣 O que é o TypeScript
 TypeScript é um ``superset`` do ``JavaScript``, ou seja, com ele adicionamos novas funções ao ``JS``, para uma maior produtividade ao desenvolvimento, o ``TS`` não é reconhecido pelo navegador, foi criado apenas com o foco em desenvolvimento, então seu propósito maior é ser uma ferramenta de desenvolvimento e após o desenvolvimento estar finalizado proporcionar a ``transpilação`` para a linguagem ``JS`` proporcionando a leitura e interpretação do navegador ao que foi desenvolvido.
 
+#
 ## 🤔 Qual a vantagem de usar TypeScript
 Se todo o código desenvolvido em ``TS`` no fim será transformado em ``JS``, então qual a real vantagem de utilizar?
 
@@ -12,6 +13,7 @@ A principal vantagem que o ``TypeScript`` se propoem a trazer é a ``Tipagem Est
 
 É nessa ``fraqueza`` do ``JS`` que o ``TS`` foi criado, assim para suprir a necessidade de tipagem forte que faltava na linguagem, com isso, agora podemos desenvolver código com muito mais segurança e certeza de que ocorreram menos problemas derivados do tipo de valor atribuído a variável.
 
+#
 ## Tipos de variáveis
 Aqui vamos ver os principais tipos de variáveis que podemos utilizar no desenvolvimento com o ``TypeScript``
 
@@ -21,6 +23,7 @@ Aqui vamos ver os principais tipos de variáveis que podemos utilizar no desenvo
 * ``boolean``: Utilizado para valores de verdadeiro e falso
 * ``array``: Utilizado para receber arrays como valor
 
+#
 ## 🙃 Atribuindo tipagem
 Vamos entender agora como podemos definir um tipo de uma variável.
 
@@ -39,6 +42,7 @@ Podemos também atribuir o valor que vai inicializar a variável caso seja neces
 let variavel:string = 'iniciando'
 ```
 
+#
 ## 😯 Criando um array tipado
 Vamos ver agora como criar um array com tipagem o que pode ser muito últil em determinados casos.
 
@@ -49,6 +53,7 @@ let alfabeto:string[] = ['A','B','C','D']
 
 Como vimos acima, todos os itens do nosso array devem obedecer a tipagem definida, qualquer valor que não obedeça essa tipagem irá gerar um erro.
 
+#
 ## 🥸 Utilizando o tipo Any
 Como vimos lá na área de tipos, temos um tipo chamado any que basicamente assume qualquer tipo, então quando utilizamos esse tipo, não precisamos nos preocupar em que tipo de valor estamos atribuindo a determinada variável pois ele irá permitir qualquer tipo de valor.
 
@@ -58,6 +63,7 @@ Bem, o tipo ``any`` é uma forma de você poder permitir adicionar qualquer valo
 
 No entanto, é importante impor o esforço de tipar as variáveis de forma correta a sua necessidade, o máximo possível, ainda assim, em alguns casos, acontecerá que não teremos como definir o valor exato que irá ser atribuído a uma variável, nesses casos extremos, podemos utilizar o tipo ``any`` para resolver.
 
+#
 ## 😏 Tipando parâmetros de funções
 Quando trabalhamos com funções também podemos tipar os parâmetros que iremos receber nessa função, para que os valores sejam atribuídos corretamente e nossas funcionalidades dentro do escopo da função funcione corretamente.
 
@@ -69,6 +75,7 @@ function concatenar(nome: string, idade: number) {
 }
 ```
 
+#
 ## 🤫 Tipando retorno de funções
 De forma simples também podemos definir o tipo do retorno que uma determinada função deve ter, para isso apenas precisamos adicionar após o fechamento dos parênteses da função dois pontos seguidos do nosso tipo ``:tipo`` exatamente igual como definimos os tipos de variáveis, vejamos abaixo um modelo.
 ```typescript
@@ -77,7 +84,7 @@ function soma(n1:number, n2:number):boolean {
 }
 ```
 
-
+#
 ## 🤤 Tipagem Múltipla
 Podemos também definir para uma determinada variável ``multi-tipagem``, ou seja, definir que a mesma variável aceita mais de um tipo de tipagem.
 
@@ -87,6 +94,7 @@ let dados:string|number
 ```
 De forma simples, para definir mais um tipo aceito pela mesma variável, basta adicionar após o primeiro tipo um sinal de pipe seguido do segundo tipo ``|number``, a partir de então a variável aceitará valores dois dois tipos, porém, continuará gerando erro em dados de tipos diferentes dos definidos.
 
+#
 ## 😉 Tipando objetos - Type e Interface
 Para tipar objetos não há segredos, tudo segue a mesma linha de reaciocínio que traçamos até agora, a grande diferença é que temos duas formas de tipar um objeto a primeira delas é criando um tipo personalizado, vamos ver um modelo.
 ```typescript
@@ -108,6 +116,7 @@ interface User = {
 
 É idêntico ao ``type``, mudando apenas a definição para ``interface``.
 
+#
 ## 🤯 Tipagem inteligente
 O ``TypeScript`` possui inteligência o suficiente para saber qual tipo deve definir para uma variável de acordo com sua inicialização, mesmo que não seja sinalizado o tipo da variável.
 
@@ -123,6 +132,7 @@ Analisando esse cenário podemos afirmar que nossa variável ``numeros`` aceita 
 
 Isso é muito legal, porém também pode se tornar um problema, por isso o recomendado é sempre definir qual o tipo é desejado em cada variável.
 
+#
 ## 🤓 Especificando tipos - Type Assertions
 Em alguns casos com o contexto inteligente do ``TS`` ocorrerá de ele assumir um tipo para um determinado objeto, porém que não conterá o atributo desejado a ser consultado.
 
@@ -133,6 +143,7 @@ Diante disso é necessário iformar o tipo correto para a sua definição e assi
 let nome = getElementById('nome') as HTMLInputElement
 ```
 
+#
 ## 😵‍💫 Especificando Tipos Literais
 Dentro do contexto do ``TS`` também podemos especificar tipos exatos, os chamados literais, eles funcionam parecidos com um modelo ``enum``, e tratam o valor atribuído e não mais o tipo desse valor.
 
@@ -143,6 +154,7 @@ let status: 'INICIADO' | 'ANDAMENTO' | 'FINALIZADO'
 
 Acima temos um modelo de tipo literal, onde deixamos explícito de forma literal qual os valores que determinada variável deve aceitar, qualquer outro valor irá gerar um erro.
 
+#
 ## 🤪 Tipando Funções
 Já vimos como tipar os parâmetros de funções e como tipar o retorno das funções, agora vamos ver como tipar funções como um todo, utilizando o ``type``, vejamos a baixo um modelo.
 ```typescript
@@ -151,6 +163,7 @@ type soma = (n1:number, n2: number) => number
 
 No modelo acima criamos uma tipagem de função chamada ``soma`` utilizando o ``type``, com isso nossa função que utilizar esse tipo deverá ter 2 parâmertros numéricos e uma saída também numérica.
 
+#
 ## 🤭 Comandos do transpilador TSC
 Para transpilar um arquivo do tipo ``TS`` utilizamos os comandos do transpilador ``TSC``, no geral utilizamos esses comandos quando estamos testando ou produzindo alguma código simples com poucos arquivos, para projetos grandes com muitos arquivos, utilizamos arquivos de configurações o que deixa o processo mais rápido e produtivo, abaixo vamos ver os principais comandos do ``TSC``.
 
@@ -170,6 +183,7 @@ Para transpilar um arquivo do tipo ``TS`` utilizamos os comandos do transpilador
 
     tsc caminho/arquivo.ts --watchMode (ou apenas -w)
 
+#
 ## 👀 Criando o arquivo de configuração
 Agora vamos ver como criar o arquivo de configuração para o nosso ``TS`` o que na maioria das vezes em desenvolvimento será mais utilizado, quando falamos a nível de projeto e não mais apenas de arquivos.
 
@@ -180,4 +194,17 @@ tsc --init
 
 Com esse comando executado, deve ter sido criado na raiz do seu projeto um arquivo chamado ``tsconfig.json``, é dentro desse arquivo que vamos fazer as configurações para nosso projeto, inclusive quando abrimos o arquivo percebemos que ele já vem todo preenchido, porém com a maioria das opções comentadas.
 
-Agora que nosso arquivo já foi criado podemos compilar todos os ``.ts`` de uma única vez, pra isso agora, precisamos apenas usar o comando ``tsc`` sem adição de nenhum parâmetro a mais e os arquivos serão transpilados.
+#
+### Avançando um pouco mais
+
+* Executando nosso arquivo de configuração
+
+    Agora que nosso arquivo já foi criado podemos transpilar todos os ``.ts`` de uma única vez, pra isso agora, precisamos apenas usar o comando ``tsc`` sem adição de nenhum parâmetro a mais e os arquivos serão transpilados.
+
+* Executando o arquivo de configuração com WhatchMode
+
+    De maneira idêntica ao que vimos anteriormente, agora, podemos usar o WatchMode na nossa execução, para isso basta usar ``--watchMode`` ou ``-w`` logo após a chamada do nosso transpilador, de forma que qualquer alteração em qualquer arquivo ``.ts`` será escutada e irá desencadear a transpilação.
+    ```sh
+    tsc -w
+    ```
+* 
