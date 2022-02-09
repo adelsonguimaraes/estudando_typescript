@@ -207,4 +207,28 @@ Com esse comando executado, deve ter sido criado na raiz do seu projeto um arqui
     ```sh
     tsc -w
     ```
-* 
+* Especificando Arquivos
+
+    Podemos limitar os arquivos que o transpilador irá processar, adicionando uma sessão chamada ``include`` em nosso arquivo de configuração, quando essa sessão é adicionado o transpilador se limitar a processar apenas os arquivos ou pastas listados nele.
+    ```json
+    ...
+    "include": [
+        "src/arquivo.ts",
+        "scripts/"
+    ]
+    ```
+
+    Nesse modelo acima, nosso transpilador só irá processar ``arquivo.ts`` localizado na pasta ``src/`` e todos os arquivos ``TS`` que estiverem dentro de ``scripts/``, todos os demais arquivos serão ignorados.
+
+* Ignorando Arquivos
+
+    Assim como podemos especificar apenas arquivos que desejamos que sejam processados, também podemos escolher quais arquivos ou pastas devem ser ignorados, adicionando a sessão ``exclude``.
+    ```json
+    ...
+    "exclude": [
+        "src/arquivo2.ts",
+        "dev/"
+    ]
+    ```
+
+    No modelo acima o transpilador irá ignorar o ``arquivo2.ts`` e todos os arquivos ``TS`` que estiverem ma pasta ``dev/``.
