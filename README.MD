@@ -152,7 +152,7 @@ type soma = (n1:number, n2: number) => number
 No modelo acima criamos uma tipagem de função chamada ``soma`` utilizando o ``type``, com isso nossa função que utilizar esse tipo deverá ter 2 parâmertros numéricos e uma saída também numérica.
 
 ## 🤭 Comandos do transpilador TSC
-Para transpilar um arquivo do tipo ``TS`` utilizamos os comandos do transpilador ``TSC``, abaixo vamos ver os principais comandos.
+Para transpilar um arquivo do tipo ``TS`` utilizamos os comandos do transpilador ``TSC``, no geral utilizamos esses comandos quando estamos testando ou produzindo alguma código simples com poucos arquivos, para projetos grandes com muitos arquivos, utilizamos arquivos de configurações o que deixa o processo mais rápido e produtivo, abaixo vamos ver os principais comandos do ``TSC``.
 
 >Comando para transpilar um arquivo no mesmo local do ``.ts``
 
@@ -165,3 +165,19 @@ Para transpilar um arquivo do tipo ``TS`` utilizamos os comandos do transpilador
 >comando para transpilar apenas arquivo sem erros
 
     tsc caminho/arquivo.ts --noEmitOnError
+
+>comando para ativar o ``WatchMode`` do transpilador, transpila sempre que há uma modificação salva
+
+    tsc caminho/arquivo.ts --watchMode (ou apenas -w)
+
+## 👀 Criando o arquivo de configuração
+Agora vamos ver como criar o arquivo de configuração para o nosso ``TS`` o que na maioria das vezes em desenvolvimento será mais utilizado, quando falamos a nível de projeto e não mais apenas de arquivos.
+
+Para iniciar nosso arquivo dentro do nosso projeto utilizamos um comando do transpilador, vamos ver como funciona.
+```sh
+tsc --init
+```
+
+Com esse comando executado, deve ter sido criado na raiz do seu projeto um arquivo chamado ``tsconfig.json``, é dentro desse arquivo que vamos fazer as configurações para nosso projeto, inclusive quando abrimos o arquivo percebemos que ele já vem todo preenchido, porém com a maioria das opções comentadas.
+
+Agora que nosso arquivo já foi criado podemos compilar todos os ``.ts`` de uma única vez, pra isso agora, precisamos apenas usar o comando ``tsc`` sem adição de nenhum parâmetro a mais e os arquivos serão transpilados.
